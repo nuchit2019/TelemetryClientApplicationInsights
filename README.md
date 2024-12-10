@@ -226,6 +226,8 @@ catch (Exception ex)
 
 ### Viewing Data in Azure Application Insights
 In the Azure Portal, you can view trace logs sent via `TrackTrace` under **Search** or **Live Metrics**. Logs can be filtered by **Severity Level** or **Properties**, making analysis more efficient and insightful.
+![image](https://github.com/user-attachments/assets/d2b1b9b2-4bad-4cdd-89cc-a6b99a25a6fb)
+
 
 #### Logging Example in Application Insights
 
