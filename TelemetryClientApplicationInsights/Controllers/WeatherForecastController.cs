@@ -40,7 +40,19 @@ namespace TelemetryClientApplicationInsights.Controllers
             //=====================================================//
             // 1. START_PROCESS
             //=====================================================// 
-            _telemetryClient.TrackTrace(LoggingMessages.START_PROCESS + processName + "Request data: {Request}", SeverityLevel.Information, new Dictionary<string, string> { { "RequestData", modelString } });
+            //_telemetryClient.TrackTrace(LoggingMessages.START_PROCESS + processName + "Request data: {Request}", SeverityLevel.Information, new Dictionary<string, string> { { "RequestData", modelString } });
+
+            _telemetryClient.TrackTrace($"{
+                LoggingMessages.START_PROCESS}{processName} - Request initiated",
+                SeverityLevel.Information,
+                new Dictionary<string, string>
+                {
+                    { "RequestData", modelString },
+                    { "Timestamp", DateTime.UtcNow.ToString("o") }, // ISO 8601 format for better readability
+                    { "UserId", HttpContext.User?.Identity?.Name ?? "Anonymous" }, // Example: capture user info
+                    { "ProcessName", processName },
+                    { "LogLevel", SeverityLevel.Information.ToString() }
+                });
 
             try
             {
