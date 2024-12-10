@@ -117,7 +117,7 @@ Flow Code Logging Example...
 
 ---
 
-#### TelemetryClient.TrackTrace(...)
+## TelemetryClient.TrackTrace(...)
 
 `TelemetryClient.TrackTrace()` is a method in Microsoft Application Insights used to send trace logs to Application Insights. It helps monitor and track system operations, such as logging process states or reporting issues. You can specify the severity level and additional properties for detailed insights.
 
